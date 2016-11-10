@@ -1,0 +1,152 @@
+body{
+	width: 99%;
+	margin: 0 auto;
+	min-width: 750px;
+	max-width: 1024px;
+}
+
+
+.slider{
+	width:100%;
+	float:left;
+	margin-bottom:-7px;
+	border: 2px solid #00ccff;
+}
+#slider-slika{
+	width: 100%;
+	margin-bottom:-5px;
+}
+
+.meni{
+	width:100%;
+	float:left;
+	background-color:blue;
+	padding-top:5px;
+	padding-bottom:0px;
+	margin-top:7px;
+	padding-right:3px;
+}
+#meni-lista{
+	padding-left:10px;
+	margin-top:4px;
+}
+.meni{
+	padding-top:0px;
+	padding-bottom:0px;
+	height:30px;
+}
+.meni a{
+	
+	color:white;
+	background-color:blue;
+	text-decoration:none;
+	margin-right:15px;
+	padding-top:4px;
+	padding-bottom:7px;
+	padding-left:3px;
+	padding-right:3px;
+}
+.meni a:hover {
+	background-color:#0066ff;
+}
+.sadrzaj{
+	width:98%;
+	float:left;
+	margin: 0 auto;
+	margin-bottom:30px;
+	padding-bottom:20px;
+	padding-left:1%;
+	padding-right:1%;
+	background-color:#e6f0ff;
+	border: 2px solid #00ccff;
+}
+
+#nasamisija{
+	margin:auto;
+	width:70%;
+}
+#img-onama{
+	width:100%;
+}
+#solucije-kategorije{
+	width:100%;
+	float:left;
+}
+
+
+#solucije-kategorije img{
+	margin-left:60px;
+	margin-right:60px;
+	margin-top:20px;
+	margin-bottom:10px;
+	width:200px;
+	height:200px;
+	border: 2px solid silver;
+}
+
+.artikal{
+	max-width:250px;
+	float: left;
+	text-align: center;
+	border:2px solid blue;
+	margin-left:40px;
+	margin-right:40px;
+	margin-bottom:20px;
+}
+.katalog span{
+	display:block;
+}
+.artikal img{
+	width:99.5%;
+	margin:auto;
+	border:1px solid blue;
+	border-bottom:2px solid blue;
+	margin-bottom:5px;
+}
+
+
+.meni ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.meni ul li {
+    display: inline;
+}
+#tabela-kontakt-div{
+	max-width:50%;
+}
+#tabela-kontakt td{
+	padding-right:5px;
+}
+#forma-katalog-div, #forma-uslovi-div, #forma-kontakt-div{
+	clear: both;
+	width:30%;
+	margin:auto;
+}
+@media only screen and (max-width: 600px) {
+    .sadrzaj {
+        background-color:lightblue;
+    }
+	.artikal{
+	max-width:150px;
+	float: left;
+	text-align: center;
+	border:2px solid red;
+	margin-left:20px;
+	margin-right:20px;
+	margin-bottom:15px;
+	}
+	.artikal img{
+	width:99.5%;
+	margin:auto;
+	border:1px solid red;
+	border-bottom:2px solid red;
+	margin-bottom:5px;
+	}
+	body{
+		min-width:550px;
+	}
+	
+}
