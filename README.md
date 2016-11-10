@@ -4,7 +4,7 @@ Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svr
 Faruk Slinic, 15475
 
 STA JE URADJENO:<br>
-5 skica za desktop i 2 za mobilnu verziju (ostale 3 stranice su iste zbog responsive dizajna)
+5 skica za desktop i 2 za mobilnu verziju (ostale 3 stranice su iste zbog responsive dizajna)<br>
 5 stranica: O nama, Mechandising solucije, Katalog, Uslovi poslovanja, Kontakt<br>
 Na svakoj stranici je isti body stil, meni i slika koja mjenja slider<br>
 Sve stranice su responzivne<br>
