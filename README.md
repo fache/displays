@@ -4,6 +4,11 @@ Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svr
 Faruk Slinic, 15475
 
 STA JE URADJENO:<br>
+Sva polja formi su validirana, na prazna polja i onchange() button se disable i prikazuje se greska<br>
+Dropdown meni je uradjen na index strani, sa dugmetom nasa misija<br>
+Dropdown meni je uradjen na index strani, sa dugmetom nasa misija<br>
+Carousel je uradjen uz pomoc biblioteke, link na njega je na kraju index stranice<br>
+<br>
 5 skica za desktop i 2 za mobilnu verziju (ostale 3 stranice su iste zbog responsive dizajna)<br>
 5 stranica: O nama, Mechandising solucije, Katalog, Uslovi poslovanja, Kontakt<br>
 Na svakoj stranici je isti body stil, meni i slika koja mjenja slider<br>
@@ -24,6 +29,10 @@ BUGOVI ZA KOJE NISU POZNATA RJESENJA:
 
 LISTA FAJLOVA:<br>
 NAZIV FAJLA - OPIS<br>
+javascript - fajl za javascript<br>
+crsl.html - html fajl za Carousel<br>
+stil2.css - stil za Carousel<br>
+<br>
 index.html - pocetna stranica (O nama)<br>
 katalog.html - html stranica u kojoj je prikazan katalog proizvoda<br>
 kontakt.html - stranica u kojoj su prikazani kontakti firme<br>
