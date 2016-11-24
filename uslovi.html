@@ -7,7 +7,6 @@
 </head>
 
 <body>
-
 <div class="slider">
 <img id="slider-slika" src="38.jpg" alt="slika">
 </div>
@@ -22,7 +21,9 @@
 </ul>
 </div>
 
+
 <div class="sadrzaj">
+
 <div class="uslovi-poslovanja">
 <h3>Uslovi poslovanja</h3>
 <h4>Kako poslati naruđbu?</h4>
@@ -47,26 +48,41 @@ Minimalna vrijednost narudžbe iznosi 3.500 rubalja sa PDV-om pri 100% plaćanju
 
 
 </div>
+
 <div id="forma-uslovi-div">
- <form action="action_page.php">
+<form name="uslovi-forma" action="action_page2.php">
   <fieldset>
-    <legend>Želite poslovati sa nama?</legend>
+    <legend>Imate pitanje?</legend>
     Vaše ime:<br>
-    <input type="text" name="firstname" value="Ime"><br>
+    <input id="kontakt-forma-ime" onchange="validacijaFormeU()" type="text" name="firstname1" value="Ime"><br>
     Vaše prezime:<br>
-    <input type="text" name="lastname" value="Prezime"><br>
+    <input type="text" name="lastname1" value="Prezime" onchange="validacijaFormeU()"><br>
 	Vaš broj telefona:<br>
-	<input type="text" name="brojtel" value="Br. tel."><br>
+	<input type="text" name="brojtel" value="Br. tel." onchange="validacijaFormeU()"><br>
 	Vaš e-mail:<br>
-	<input type="text" name="mail" value="e-mail"><br><br>
-    <input type="submit" value="Posalji">
+	<input type="text" name="mail" value="e-mail" onchange="validacijaFormeU()"><br><br>
+	<p id="uimegr"></p>
+	<p id="uprezimegr"></p>
+	<p id="ubrojgr"></p><br>
+	<p id="umailgr"></p><br>
+    <input id="posalji2" type="submit" value="Posalji" onclick="validacijaSubmitU()">
+	
+	
   </fieldset>
 </form> 
+
+
+
+
+
+
+
+
 </div>
 </div>
 
 
 
-
+<script src="javascript.js"></script>
 </body>
 </html>

@@ -54,16 +54,24 @@
 
 </div>
 
+
+
+
+
+
 <div id="forma-kontakt-div">
- <form action="action_page.php">
+ <form name="kontakt-forma" action="action_page.php">
   <fieldset>
     <legend>Imate pitanje?</legend>
     Vaše ime:<br>
-    <input type="text" name="firstname" value="Ime"><br>
+    <input id="kontakt-forma-ime" onchange="validacijaFormeK()" type="text" name="firstname" value="Ime"><br>
     Vaše prezime:<br>
-    <input type="text" name="lastname" value="Prezime"><br>
-    <textarea name="message" rows="10" cols="30">Postavite pitanje...</textarea><br><br>
-	<input type="submit" value="Posalji">
+    <input type="text" name="lastname" value="Prezime" onchange="validacijaFormeK()"><br>
+    <textarea id ="kontaktporuka" onchange="validacijaFormeK()" name="message" rows="10" cols="30">Postavite pitanje...</textarea><br><br>
+	<p id="kimegr"></p>
+	<p id="kprezimegr"></p>
+	<p id="kporukagr"></p><br>
+	<input id="posalji" onclick="validacijaSubmitK()" type="submit" value="Posalji">
 	
   </fieldset>
 </form> 
@@ -71,6 +79,6 @@
 
 </div>
 
-
+<script src="javascript.js"></script>
 </body>
 </html>

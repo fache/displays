@@ -1,9 +1,50 @@
-body{
+ body{
 	width: 99%;
 	margin: 0 auto;
 	min-width: 750px;
 	max-width: 1024px;
 }
+
+
+
+
+.klik-meni {
+    background-color: #00ccff;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+.klik-meni:hover, .klik-meni:focus {
+    background-color: #FFAA00;
+}
+.klik-meni {
+    position: relative;
+    display: inline-block;
+}
+.linkovi-padajuci {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.linkovi-padajuci a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+.linkovi-padajuci a:hover {background-color: #f1f1f1}
+.show {display:block;}
+
+
+
+
+
+
+
 
 
 .slider{

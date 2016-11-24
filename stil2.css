@@ -1,0 +1,11 @@
+ .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 30%;
+      margin: auto;
+  }
+
+.item img{
+	max-width:250px;
+	max-height:350px;
+	
+}
