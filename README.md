@@ -2,7 +2,57 @@ Display Solutions
 Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svrhe u trgovackim lancima ili manjim prodavnicama. Razni proizvodi omogucavaju kupcima laksu uocljivost proizvoda, a samim prodavnicama olaksano upravljanje njima.
 
 Faruk Slinic, 15475
+.................................................treca spirala...................................<br>
 
+STA JE URADJENO:<br>
+Napravljena je serijalizacija svih podataka u XML fajl proizvodi.xml. Na login USER:admin PASS:pass koji se testira u sifraadmin.xml biblioteci, adminu se prikazuju opcije u katalog.php stranici. Inace, do sada svaki html je uradjen kao php. Admin moze vrsiti unos, izmjenu i brisanje artikala.
+Takodjer je omogucen download podataka podaci.csv koji sadrzi informacije o artiklima, i pregled izvjestaja u obliku pdf fajla. Uradjena je pretraga artikala po nazivu i ID-u. Prikazuje se do 10 stavki prema pretrazi, a po izvrsenju pretrage se prikazuju svi artikli koji je zadovoljavaju.
+
+STA NIJE URADJENO:<br>
+Nije validirana nijedna forma, deployment na OpenShift
+
+LISTA FAJLOVA:<br>
+NAZIV FAJLA - OPIS<br>
+sifraadmin.xml - sifra admina za pristp admin dijelu<br>
+proizvodi.xml - xml fajl u kome se cuvaju informacije o proizvodima<br>
+podaci.csv - csv fajl u kome se cuvaju informacije o proizvodima<br>
+downloadcsv.php - php stranica za download fajla podaci.php
+pronadjeniartikli.php - prikaz artikala nakon izvrsavanja admin pretrage<br>
+pretraga.php - fajl za pretragu artikala<br>
+pomocnapretraga.php - koristi se sa pretraga.php, za prolazak kroz proizvodi.xml<br>
+pdfizvjestaj.php - kod za prewiev pdf izvjestaja<br>
+log.php - kod za logiranje admina<br>
+log-form.php - forma za logiranje<br>
+admin-panel.php - kod za prikaz opcija koje vidi samo admin<br>
+javascript - fajl za javascript<br>
+index.php - pocetna stranica (O nama)<br>
+katalog.php - html stranica u kojoj je prikazan katalog proizvoda<br>
+kontakt.php - stranica u kojoj su prikazani kontakti firme<br>
+solucije.php - stranica u kojoj su prikazane Merchandising solucije<br>
+uslovi.php - stranica u kojoj su prikazani uslovi poslovanja sa firmom<br>
+stil.css - eksterni css fajl za ostale stranica <br>
+38.jpg - slika na vrhu svake stranice<br>
+misija.jpg - slika za O nama stranicu<br>
+zamrznuta_hrana.jpg - slika za Merchandising solucije<br>
+hrana_za_bebe.jpg - slika za Merchandising solucije<br>
+proizvodi_po_kilazi.jpg - slika za Merchandising solucije<br>
+145.jpg - slika za Katalog<br>
+159.jpg - slika za Katalog<br>
+350.jpg - slika za Katalog<br>
+694.jpg - slika za Katalog<br>
+760.jpg - slika za Katalog<br>
+770.jpg - slika za Katalog<br>
+781.jpg - slika za Katalog<br>
+index.jpg - skica<br>
+solucije.jpg - skica<br>
+katalog.jpg - skica<br>
+uslovi.jpg - skica<br>
+kontakt.jpg - skica<br>
+katalog-mobilna.jpg - skica<br>
+solucije-mobilna.jpg - skica<br>
+
+
+.................................................druga i prva spirala...................................<br>
 STA JE URADJENO:<br>
 Sva polja formi su validirana, na prazna polja i onchange() button se disable i prikazuje se greska<br>
 Dropdown meni je uradjen na index strani, sa dugmetom nasa misija<br>
