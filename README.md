@@ -1,3 +1,5 @@
+NAPOMENA: pdf.zip fajl je potrebno raspakovati tako da folder "pdf" bude na istoj lokaciji kao ostale stranice i fajlovi.
+<br><br>
 Display Solutions
 Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svrhe u trgovackim lancima ili manjim prodavnicama. Razni proizvodi omogucavaju kupcima laksu uocljivost proizvoda, a samim prodavnicama olaksano upravljanje njima.
 
