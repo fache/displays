@@ -6,7 +6,12 @@
 }
 
 
-
+#login-linijski{
+	max-width:1024px;
+}
+#login-forma1, #login-forma2{
+	float:left;
+}
 
 .klik-meni {
     background-color: #00ccff;
@@ -127,6 +132,9 @@
 
 .artikal{
 	max-width:250px;
+	min-width:250px;
+	max-height:300.75px;
+	min-height:300.75px;
 	float: left;
 	text-align: center;
 	border:2px solid blue;
@@ -137,14 +145,19 @@
 .katalog span{
 	display:block;
 }
-.artikal img{
+.artikal span img{
 	width:99.5%;
+	max-width:250px;
+	max-height:250px;
 	margin:auto;
 	border:1px solid blue;
 	border-bottom:2px solid blue;
 	margin-bottom:5px;
 }
-
+.artikal span{
+	max-height:256.75px !important;
+	min-height:256.75px !important;
+}
 
 .meni ul {
     list-style-type: none;
@@ -166,6 +179,7 @@
 	width:30%;
 	margin:auto;
 }
+
 @media only screen and (max-width: 600px) {
     .sadrzaj {
         background-color:lightblue;

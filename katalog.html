@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Display Solutions</title>
+	<link rel="stylesheet" href="stil.css">
+</head>
+
+<body>
+
+<div class="slider">
+<img id="slider-slika" src="38.jpg" alt="slika">
+</div>
+
+<div class="meni">
+<ul id="meni-lista">
+  <li><a href="index.html">O nama</a></li>
+  <li><a href="solucije.html">Merchandising solucije</a></li>
+  <li><a href="katalog.html">Katalog</a></li>
+  <li><a href="uslovi.html">Uslovi poslovanja</a></li>
+  <li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</div>
+
+<div class="sadrzaj">
+<div class="katalog">
+<h3>Katalog</h3>
+<div class="artikal">
+<span>
+<img src="145.jpg" alt="slika">
+</span>
+<span>
+A4 okviri
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="159.jpg" alt="slika">
+</span>
+<span>
+Spremnik rifuza
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="350.jpg" alt="slika">
+</span>
+<span>
+Lopatice
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="694.jpg" alt="slika">
+</span>
+<span>
+Jarboli
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="760.jpg" alt="slika">
+</span>
+<span>
+Informacioni sistemi
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="770.jpg" alt="slika">
+</span>
+<span>
+Kusur tacna
+</span>
+</div>
+
+<div class="artikal">
+<span>
+<img src="781.jpg" alt="slika">
+</span>
+<span>
+Markeri
+</span>
+</div>
+
+
+</div>
+
+<div id="forma-katalog-div">
+ <form name="katalog-forma" action="action_page.php">
+  <fieldset>
+    <legend>Porucite proizvod:</legend>
+    Vaše ime:<br>
+    <input type="text" name="firstname" value="Ime" onchange="validacijaFormeKat()"><br>
+    Vaše prezime:<br>
+    <input type="text" name="lastname" value="Prezime" onchange="validacijaFormeKat()"><br>
+	Vaš broj telefona:<br>
+	<input type="text" name="brojtel" value="Br. tel." onchange="validacijaFormeKat()"><br>
+	Vaš e-mail:<br>
+	<input type="text" name="mail" value="e-mail" onchange="validacijaFormeKat()"><br>
+	<textarea name="message" rows="10" cols="30" onchange="validacijaFormeKat()">Unesite artikle i količinu</textarea><br><br>
+	<p id="kaimegr"></p>
+	<p id="kaprezimegr"></p>
+	<p id="kabrojgr"></p><br>
+	<p id="kamailgr"></p><br>
+	<p id="kaporukagr"></p><br>
+    <input id="posalji3" type="submit" value="Posalji">
+  </fieldset>
+</form> 
+</div>
+
+
+</div>
+
+
+
+
+
+<script src="javascript.js"></script>
+</body>
+</html>

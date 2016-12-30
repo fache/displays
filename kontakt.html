@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Display Solutions</title>
+	<link rel="stylesheet" href="stil.css">
+</head>
+
+<body>
+
+<div class="slider">
+<img id="slider-slika" src="38.jpg" alt="slika">
+</div>
+
+<div class="meni">
+<ul id="meni-lista">
+  <li><a href="index.html">O nama</a></li>
+  <li><a href="solucije.html">Merchandising solucije</a></li>
+  <li><a href="katalog.html">Katalog</a></li>
+  <li><a href="uslovi.html">Uslovi poslovanja</a></li>
+  <li><a href="kontakt.html">Kontakt</a></li>
+</ul>
+</div>
+
+<div class="sadrzaj">
+<div class="kontakt">
+<h3>Kontakt</h3>
+
+<div id="tabela-kontakt-div">
+<table id="tabela-kontakt">
+<tr>
+<td><strong>Office</strong></td>
+<td><strong>Tel.</strong></td>
+<td><strong>Adress</strong></td>
+<td><strong>e-mail</strong></td>
+</tr>
+<tr>
+<td>Sarajevo</td>
+<td>+38761326159</td>
+<td>Zmaja od Bosne bb</td>
+<td></td>
+</tr>
+<tr>
+<td>Moskva</td>
+<td>+38761326159</td>
+<td>Moskovska</td>
+<td></td>
+</tr>
+</table>
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+<div id="forma-kontakt-div">
+ <form name="kontakt-forma" action="action_page.php">
+  <fieldset>
+    <legend>Imate pitanje?</legend>
+    Vaše ime:<br>
+    <input id="kontakt-forma-ime" onchange="validacijaFormeK()" type="text" name="firstname" value="Ime"><br>
+    Vaše prezime:<br>
+    <input type="text" name="lastname" value="Prezime" onchange="validacijaFormeK()"><br>
+    <textarea id ="kontaktporuka" onchange="validacijaFormeK()" name="message" rows="10" cols="30">Postavite pitanje...</textarea><br><br>
+	<p id="kimegr"></p>
+	<p id="kprezimegr"></p>
+	<p id="kporukagr"></p><br>
+	<input id="posalji" onclick="validacijaSubmitK()" type="submit" value="Posalji">
+	
+  </fieldset>
+</form> 
+</div>
+
+</div>
+
+<script src="javascript.js"></script>
+</body>
+</html>
