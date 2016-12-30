@@ -2,7 +2,7 @@ Display Solutions
 Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svrhe u trgovackim lancima ili manjim prodavnicama. Razni proizvodi omogucavaju kupcima laksu uocljivost proizvoda, a samim prodavnicama olaksano upravljanje njima.
 
 Faruk Slinic, 15475
-.................................................treca spirala...................................<br>
+<br>.................................................treca spirala...................................<br>
 
 STA JE URADJENO:<br>
 Napravljena je serijalizacija svih podataka u XML fajl proizvodi.xml. Na login USER:admin PASS:pass koji se testira u sifraadmin.xml biblioteci, adminu se prikazuju opcije u katalog.php stranici. Inace, do sada svaki html je uradjen kao php. Admin moze vrsiti unos, izmjenu i brisanje artikala.
@@ -16,7 +16,7 @@ NAZIV FAJLA - OPIS<br>
 sifraadmin.xml - sifra admina za pristp admin dijelu<br>
 proizvodi.xml - xml fajl u kome se cuvaju informacije o proizvodima<br>
 podaci.csv - csv fajl u kome se cuvaju informacije o proizvodima<br>
-downloadcsv.php - php stranica za download fajla podaci.php
+downloadcsv.php - php stranica za download fajla podaci.php<br>
 pronadjeniartikli.php - prikaz artikala nakon izvrsavanja admin pretrage<br>
 pretraga.php - fajl za pretragu artikala<br>
 pomocnapretraga.php - koristi se sa pretraga.php, za prolazak kroz proizvodi.xml<br>
