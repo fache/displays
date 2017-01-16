@@ -1,9 +1,26 @@
 NAPOMENA: pdf.zip fajl je potrebno raspakovati tako da folder "pdf" bude na istoj lokaciji kao ostale stranice i fajlovi. Fajl pdfizvjestaj.php sadrzi : require("pdf/fpdf.php")
+username: admin<br>
+password: pass
 <br><br>
 Display Solutions
 Display Solutions je firma koja se bavi proizvodnjom plasitke za marketinske svrhe u trgovackim lancima ili manjim prodavnicama. Razni proizvodi omogucavaju kupcima laksu uocljivost proizvoda, a samim prodavnicama olaksano upravljanje njima.
 
 Faruk Slinic, 15475
+<br>.................................................cetvrta spirala...................................<br>
+STA JE URADJENO:<br>
+Napravljena MySQL sa tri povezane tabele (slogovi tabele nazivi se ne mogu brisati dok se ne obrisu povezani iz cijene i putanje), takodjer je i tabela sifraprijave koja ima user i md5 password. <br>
+Dugme koje vidi samo admin se nalazi na stranici Katalog, XML to BAZA, a njegov kod je u admin-panel.php na 264. liniji koda. Ova skripta (kod) ubacuje samo podatke koje se ne nalaze u bazi iz XML-a u nju.<br>
+Kodovi za login, dodavanje artikla, brisanje artikla, prikaz artikala su prepravljeni i vuku podatke iz baze, dok izmjena artikla, formiranje izvjestaja csv, pdf i pretraga nisu, te se oslanjaju na xml fajl.<br>
+Napravljena je REST metoda, koja vraca podatke u JSON obliku. Na kraju Katalog.php mozemo vidjeti pretragu proizvoda kojima je cijena 0.<br>
+STA NIJE URADJENO:<br>
+e, f zadaci<br>
+<br>
+LISTA FAJLOVA:<br>
+NAZIV FAJLA - OPIS<br>
+displays.sql - baza<br>
+ispiscijena.php - REST<br>
+<br>
+
 <br>.................................................treca spirala...................................<br>
 
 STA JE URADJENO:<br>
