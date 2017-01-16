@@ -37,6 +37,7 @@ if (isset($_SESSION['korisnik'])){
 	<button type="submit" name="dodaj">Dodaj</button>
 	<button type="submit" name="izmjeni">Izmjeni</button>
 	<button type="submit" name="obrisi">Obrisi</button>
+	<button type="submit" name="xmltobase">XML to BAZA</button>
 	</form>
 	
 	<a href="downloadcsv.php">Preuzmi katalog csv</a><br>
@@ -61,7 +62,11 @@ include 'pretraga.php';
 
 </div>
 
-
+<form action="ispiscijena.php" method="GET">
+	Pretrazi artikle bez cijene:
+	<input type="text" value="0" name="cijena">
+	<button type="submit" name="cijenapretraga">Pretraga</button>
+</form>
 
 
 </div>

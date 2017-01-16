@@ -49,7 +49,7 @@ function izmjenaartiklapom(xml){
 
 <?php 
 	if(isset($_POST['dodavanje-artikla'])){
-		$dat=new DomDocument("1.0","UTF-8");
+		/*$dat=new DomDocument("1.0","UTF-8");
 		$dat->load('proizvodi.xml');
 		
 		$unesinaziv=$_POST['naziv-art'];
@@ -79,6 +79,44 @@ function izmjenaartiklapom(xml){
 			$upis=$upis . $artikalxml->lokacija . "\r\n";
 		}	
 		file_put_contents("podaci.csv", $upis);
+		*/
+		$unesinaziv=$_POST['naziv-art'];
+		$unesiid=$_POST['id-art'];
+		$unesiputanju=$_POST['put-slike'];
+		
+		$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$base = $conn->query("select id, naziv from nazivi where id='$unesiid'");
+		$test=true;
+		foreach ($base as $jedan){
+			if ($unesiid == $jedan['id']){
+				$test=false;
+				echo('Vec postoji proizvod sa unsenim ID-em!');
+				break;
+			}
+		}	
+		if ($test){
+			$sql = "INSERT INTO nazivi (ID, Naziv) VALUES ('$unesiid', '$unesinaziv')";
+			$conn->exec($sql);
+			$sql = "INSERT INTO cijene (ID, cijena) VALUES ($unesiid, 0)";
+			$conn->exec($sql);
+			$sql = "INSERT INTO putanje (ID, putanja) VALUES ($unesiid, '$unesiputanju')";
+			$conn->exec($sql);
+			
+			/*$upis='';
+			$base2 = $conn->query("select nazivi.id, nazivi.naziv, ptanje.putanja from nazivi, putanje where nazivi.id=putanje.id");
+			foreach($base2 as $jedan2){
+				$upis=$upis . $jedan2['naziv'] . ',';
+				$upis=$upis . $jedan2['id'] . ',';
+				$upis=$upis . $jedan2['putanja'] . "\r\n";
+			}	
+			file_put_contents("podaci.csv", $upis);*/
+		}
+		
 	}
 	
 	if(isset($_POST['izmjena-artikla'])){
@@ -114,7 +152,7 @@ function izmjenaartiklapom(xml){
 	}
 	
 	if(isset($_POST['brisanje-artikla'])){
-		$dat=new DomDocument("1.0","UTF-8");
+		/*$dat=new DomDocument("1.0","UTF-8");
 		$dat->load('proizvodi.xml');
 		
 		$brisanjeOpcije=$_POST['opcijaimena'];
@@ -136,7 +174,26 @@ function izmjenaartiklapom(xml){
 			$upis=$upis . $artikalxml->ID . ',';
 			$upis=$upis . $artikalxml->lokacija . "\r\n";
 		}	
-		file_put_contents("podaci.csv", $upis);
+		file_put_contents("podaci.csv", $upis);*/
+		$brisanjeOpcije=$_POST['opcijaimena'];
+		$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$base = $conn->query("select id, naziv from nazivi where nazivi.naziv='$brisanjeOpcije'");
+		$prva='';
+		$druga='';
+		foreach($base as $ime){
+			$prva=$ime['naziv'];
+			$druga=$ime['id'];
+		}
+		
+		$base = $conn->query("delete from cijene where id=$druga");
+		$base = $conn->query("delete from putanje where id=$druga");
+		$base = $conn->query("delete from nazivi where naziv='$brisanjeOpcije'");
+		
 	}
 ?>
 
@@ -159,9 +216,18 @@ function izmjenaartiklapom(xml){
 	<form action="" method="POST">
 		<label><b>Izaberi artikal</b></label><br>
 		<select name="opcijaimena1" onchange="izmjenaartikla()"  id="izmjava" required>
-			<?php foreach($art->children() as $arts) {?>
-				<option><?php echo $arts->Naziv; ?></option>
-			<?php } ?>
+			<?php
+		$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$base = $conn->query("select naziv from nazivi");
+		foreach($base as $naz) {?>
+					
+			<option><?php echo $naz['naziv'] ?></option>
+		<?php } ?>
 		</select><br>
 		
 		<label><b>Promijeni naziv artikla</b></label>
@@ -178,13 +244,98 @@ function izmjenaartiklapom(xml){
 	<form action="" method="POST">
 		<label><b>Izaberi artikal</b></label><br>
 		<select name="opcijaimena" required>
-		<?php foreach($art->children() as $arts) {?>
-			<option><?php echo $arts->Naziv; ?></option>
+		<?php
+		$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$base = $conn->query("select naziv from nazivi");
+		foreach($base as $naz) {?>
+					
+			<option><?php echo $naz['naziv'] ?></option>
 		<?php } ?>
 		</select><br>
 
 		<button type="submit" name="brisanje-artikla">Obrisi artikal</button>
 	</form>
+	
+<?php elseif(isset($_POST['xmltobase'])) : ?>
+	<?php 
+	$servername = "localhost";
+	$username = "admin";
+	$password = "pass";
+	$dbname = "displays";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+	
+	
+	$prebacixml=simplexml_load_file("proizvodi.xml")  or die("Error: Cannot create object");
+		
+		foreach($prebacixml->artikal as $artikalxml){
+			
+			$rezultat = $conn->query("select ID from nazivi where ID=$artikalxml->ID");
+			$nema=true;
+			foreach($rezultat as $ok){
+				$nema=false;
+			}
+			if (!$rezultat) {
+				$greska = $conn->errorInfo();
+				print "SQL greška: " . $greska[2];
+				exit();
+			}
+			if (!$nema) {
+				continue;				
+			}
+			
+			$sql = "INSERT INTO nazivi (ID, Naziv) VALUES ($artikalxml->ID,'$artikalxml->Naziv')";
+			$conn->exec($sql);
+			
+			$sql = "INSERT INTO putanje (ID, putanja) VALUES ($artikalxml->ID,'$artikalxml->lokacija')";
+			$conn->exec($sql);
+			
+			$sql = "INSERT INTO cijene (ID, cijena) VALUES ($artikalxml->ID,0)";
+			$conn->exec($sql);
+		}
+	
+    }
+	
+	catch(PDOException $e)
+    {
+    echo $sql . "<br>" . $e->getMessage();
+    }
+	
+		/*$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		
+		// Create connection
+		$conn = new mysqli($servername, $username, $password, $dbname);
+		// Check connection
+		if ($conn->connect_error) {
+			die("Connection failed: " . $conn->connect_error);
+		} 
+		
+		$prebacixml=simplexml_load_file("proizvodi.xml")  or die("Error: Cannot create object");
+		
+		foreach($prebacixml->artikal as $artikalxml){
+			
+			$sql = "INSERT INTO nazivi (ID, Naziv) VALUES ($artikalxml->ID, $artikalxml->Naziv)";
+			echo 'ok ';
+			if ($conn->query($sql) == TRUE) {
+				//echo "New record created successfully";
+			} else {
+				//echo "Error: " . $sql . "<br>" . $conn->error;
+			}
+		}*/
+
+
+	?> 
 <?php endif; ?>
 
 

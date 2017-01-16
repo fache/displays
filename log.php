@@ -5,14 +5,31 @@ if(isset($_POST['prijava'])){
 		$korisnik = $_SESSION['korisnik'];
 		
 	else if (isset($_REQUEST['uname'])) {
-		$xml=simplexml_load_file("sifraadmin.xml") or die("Error: Cannot create object");
-		if ($_REQUEST['uname'] == ($xml->user) && $_REQUEST['psw'] == ($xml->pass)){
+		$servername = "localhost";
+		$username = "admin";
+		$password = "pass";
+		$dbname = "displays";
+		$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+		$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$ime=$_REQUEST['uname'];
+		$base = $conn->query("select username, password from sifraprijave where username='$ime'");
+		$test=true;
+		foreach ($base as $jedan){
+			if ($_REQUEST['uname'] == $jedan['username'] && md5($_REQUEST['psw']) == $jedan['password']){
+				$korisnik = $_REQUEST['uname'];
+				$_SESSION['korisnik'] = $korisnik;
+				echo "<div>Uspjesno ste se prijavili kao admin</div>";
+				$test=false;
+			}
+		}		
+		//$xml=simplexml_load_file("sifraadmin.xml") or die("Error: Cannot create object");
+		/*if ($_REQUEST['uname'] == ($xml->user) && $_REQUEST['psw'] == ($xml->pass)){
 			$korisnik = $_REQUEST['uname'];
 			$_SESSION['korisnik'] = $korisnik;
 			echo "<div>Uspjesno ste se prijavili kao admin</div>";
 			
-		}
-		else
+		}*/
+		if ($test)
 			echo "<div>Prijava nije uspjela, pokusajte ponovo.</div>";
 	}
 
